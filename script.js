@@ -64,10 +64,10 @@ const cardValues = [];
 const cards = document.querySelectorAll(".card");
 const flipCounter = document.querySelector(".flip-counter");
 const timeCounter = document.querySelector(".time-counter");
-const rulesLink = document.querySelectorAll('.rules-link');
-const popup = document.querySelector('.pop-up');
-const closePopup = document.querySelector('.xmark');
-const restartGame = document.querySelector(".restart-btn")
+const rulesLink = document.querySelectorAll(".rules-link");
+const popup = document.querySelector(".pop-up");
+const closePopup = document.querySelector(".xmark");
+const restartGame = document.querySelector(".restart-btn");
 let firstCard = null;
 let secondCard = null;
 let matchedCards = 0;
@@ -177,17 +177,14 @@ function updateTimeCounter() {
 
 startGame();
 
-
-rulesLink.forEach(function(link) {
-  link.addEventListener('click', function() {
-    popup.classList.add('active');
-  });
+rulesLink.forEach(function (link) {
+	link.addEventListener("click", function () {
+		popup.classList.add("active");
+	});
 });
 
-closePopup.addEventListener('click', function() {
-  popup.classList.remove('active');
+closePopup.addEventListener("click", function () {
+	popup.classList.remove("active");
 });
 
-
-
-restartGame.addEventListener("click", startGame)
+restartGame.addEventListener("click", startGame);
