@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Delicious+Handrawn&family=Pacifico&family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(250, 222, 225);
+}
+
+nav {
+    background-color: rgb(253, 224, 229);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+ul li {
+    margin: 15px;
+    font-size: 1.2rem;
+}
+
+ul li a {
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.container-fluid h1 {
+    margin-top: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.container-fluid p {
+    margin: 30px;
+}
+
+.container-fluid {
+    text-align: center;
+    position: relative;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    font-size: 3rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 1px 2px 2px #000;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card::before, .card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    z-index: 1;
+}
+
+.card::before {
+    background-image: linear-gradient(90deg, rgb(254, 214, 221), rgb(255, 150, 150));
+    transform: rotateY(0deg);    
+}
+
+.card::after {
+    background-image: linear-gradient(90deg, rgb(252, 238, 241), rgb(215, 205, 205));
+    transform: rotateY(180deg);
+}
+
+.card.flip::before, .card.flip::after {
+    z-index: -1;
+}
+
+.card-number {
+    transform: rotateY(180deg);
+}
+
+i {
+    color: red;
+}
+
+.counters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: end;
+    color: grey;
+    font-size: x-small;
+    margin: 10px;
+}
+
+.container-fluid .pop-up {
+    width: 500px;
+    height: auto;
+    /* background-image: linear-gradient(90deg,rgb(252, 186, 196), rgb(248, 207, 207), rgb(255, 154, 154)); */
+    background-color: rgb(255, 227, 231);
+    border-radius: 30px;
+    position: absolute;
+    top: 50px;
+    box-shadow: 2px 0px 100px 0px rgb(255, 150, 150);
+    opacity: 0;
+    transition: opacity ease-in-out 0.3s;
+    z-index: -1;
+}
+
+.container-fluid .pop-up.active {
+    opacity: 1;
+    transition: opacity ease-in-out 0.3s;
+    z-index: 1;
+}
+
+.pop-up h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.pop-up li {
+    margin: 20px;
+    text-align: left;
+}
+
+.xmark {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.logo img {
+    width: 50px;
+    margin: 0 20px 0 50px;
+}
+
+.container-fluid .restart-btn {
+   width: 20%;
+   border-radius: 20px;
+   padding: 10px;
+   margin: 20px;
+   border: 0;
+   background-color: rgb(254, 214, 221);
+   transition: all ease-in 0.3s;
+}
+
+.container-fluid .restart-btn:hover {
+    background-color: rgb(252, 186, 196);
+    font-weight: bold;
+    transition: all ease-in 0.3s;
+}
