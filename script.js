@@ -198,4 +198,19 @@ restartGame.addEventListener("click", function() {
 	endTime = null;
 	flipCounter.textContent = "Flipped: 0";
 	timeCounter.textContent = "Time: 0s";
+
+    // Shuffle the cards
+	for (let i = cards.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		cards[i].style.order = j;
+	}
+
+	// Add event listeners to the cards
+	for (let i = 0; i < cards.length; i++) {
+		cards[i].innerHTML =
+			'<span class="card-number">' + cardValues[i] + "</span>";
+		cards[i].setAttribute("data-value", cardValues[i]); // add data-value attribute
+		cards[i].classList.remove("flip");
+		cards[i].addEventListener("click", flipCard);
+	}
 })
